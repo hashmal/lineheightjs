@@ -8,11 +8,9 @@ visualize where your elements get misaligned.
 Usage
 -----
 
-Drag & drop the following link to your bookmark bar:
+Create a bookmark pointing to the following address:
 
-<blockquote>
-    <a href="javascript:!document.lineheightjs?document.body.appendChild(document.createElement("script")).src="http://www.bravebolt.com/lineheightjs/lineheight.js":document.lineheightjs.toggle();void(0)">LineheightJS</a>
-</blockquote>
+    javascript:!document.lineheightjs?document.body.appendChild(document.createElement("script")).src="http://www.bravebolt.com/lineheightjs/lineheight.js":document.lineheightjs.toggle();void(0)
 
 Clicking on it toggles the display of LineheightJS on (almost) any page.
 
