@@ -36,6 +36,19 @@
         return height;
     }
 
+    // Get the document height, cross-browser. If the document height is less
+    // than the viewport height, get the viewport height instead.
+    function getDocumentHeight() {
+        return Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.offsetHeight,
+            document.body.clientHeight,
+            document.documentElement.clientHeight
+        );
+    }
+
     // Generate overlay
     function overlay () {
         return '<div id="lineheightjs-overlay"></div>';
@@ -43,7 +56,7 @@
 
     // Generate styling
     function styles () {
-        return '<style type="text/css">#lineheightjs-overlay {background-image: url(\'data:image/png;base64,' + createBg64(getLh()) + '\');height: ' + document.height + 'px;left: 0;position:absolute;pointer-events:none;top:0;width:100%;z-index:9999;}</style>';
+        return '<style type="text/css">#lineheightjs-overlay {background-image: url(\'data:image/png;base64,' + createBg64(getLh()) + '\');height: ' + getDocumentHeight() + 'px;left: 0;position:absolute;pointer-events:none;top:0;width:100%;z-index:9999;}</style>';
     }
 
     document.lineheightjs = {
